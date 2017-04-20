@@ -14,15 +14,25 @@ class ViewController: UIViewController {
     
     
     @IBAction func checkNumberButton(_ sender: Any) {
-        let num = Int(numberInput.text!)!
         
-        if num == 1 || num == 2 || num == 3 || num == 5 {
-            primeOutput.text = "It's prime!"
-        } else if num % 2 == 0 || num % 3 == 0 || num % 5 == 0 {
-            primeOutput.text = "It is not a prime"
-        } else {
-            primeOutput.text = "It's prime!"
+        if let userInputString = numberInput.text {
+            let userInputInteger = Int(userInputString)
+            
+            if let num = userInputInteger {
+                if num == 1 || num == 2 || num == 3 || num == 5 {
+                    primeOutput.text = "\(num) is a prime!"
+                } else if num % 2 == 0 || num % 3 == 0 || num % 5 == 0 {
+                    primeOutput.text = "\(num) is not a prime"
+                } else {
+                    primeOutput.text = "\(num) is a prime!"
+                }
+            } else {
+                primeOutput.text = "Please enter a positive whole number"
+            }
         }
+        
+        
+        
     }
     
     @IBOutlet var primeOutput: UILabel!
