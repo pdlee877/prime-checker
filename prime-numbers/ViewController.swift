@@ -19,9 +19,9 @@ class ViewController: UIViewController {
             let userInputInteger = Int(userInputString)
             
             if let num = userInputInteger {
-                if num == 1 || num == 2 || num == 3 || num == 5 {
+                if num == 2 || num == 3 || num == 5 {
                     primeOutput.text = "\(num) is a prime!"
-                } else if num % 2 == 0 || num % 3 == 0 || num % 5 == 0 {
+                } else if num == 1 || num % 2 == 0 || num % 3 == 0 || num % 5 == 0 {
                     primeOutput.text = "\(num) is not a prime"
                 } else {
                     primeOutput.text = "\(num) is a prime!"
